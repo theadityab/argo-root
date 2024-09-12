@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: reports-{{ .Values.environmentPrefix }}
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: myapp
+    server: "https://kubernetes.default.svc"
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values.yaml
+    path: environments/{{ .Values.environmentPrefix }}/
+    repoURL: https://github.com/theadityab/app-of-apps.git
+    targetRevision:  {{ .Values.targetbranch }}
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true

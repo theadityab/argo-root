@@ -19,7 +19,7 @@ spec:
           elementsYaml: "{{ .key.components | toJson }}"
   template:
     metadata:
-      name: '{{ .key.components.name }}-{{.path.basename}}'
+      name: '{{ .name }}-{{.path.basename}}'
     spec:
       project: default
       syncPolicy:
@@ -33,7 +33,7 @@ spec:
           helm:
             valueFiles:
             - ../../appconfig/environments/{{.path.basename}}-values.yaml
-            - ../../k8sconfig/apps/{{ .key.components.name }}/{{.path.basename}}-version.yaml
+            - ../../k8sconfig/apps/{{ .name }}/{{.path.basename}}-version.yaml
             - ../../appconfig/global-values.yaml
       destination:
         server: https://kubernetes.default.svc

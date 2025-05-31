@@ -1,0 +1,8 @@
+defaults: &defaultValues
+  targetversion: release-9.1
+key:
+  components:
+    - name: core
+      <<: *defaultValues
+    - name: admin
+      targetversion: release-9.1

@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-appset-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:theadityab/argo-root.git
+    path: argocd/app-of-apps/appset  # Now pointing only to the ApplicationSet manifest directory
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc  # Points to the centralized Argo CD instance
+    namespace: argocd  # Ensures the ApplicationSet is deployed in the argocd namespace
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true

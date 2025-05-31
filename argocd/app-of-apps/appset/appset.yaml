@@ -13,7 +13,7 @@ spec:
           repoURL: https://github.com/theadityab/argo-root.git
           revision: main
           files:
-          - path: appconfig/environments/*/applist.yaml
+          - path: argocd/environments/*/applist.yaml
       - list:
           elements: []
           elementsYaml: "{{ .key.components | toJson }}"

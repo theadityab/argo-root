@@ -4,5 +4,6 @@ key:
   components:
     - name: core
       <<: *defaultValues
-    # - name: admin
-    #   targetversion: release-9.1
+      tag: v1
+    - name: admin
+      targetversion: release-9.1

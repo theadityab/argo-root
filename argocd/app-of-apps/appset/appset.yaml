@@ -36,7 +36,7 @@ spec:
             - ../../appconfig/global-values.yaml
             - ../../appconfig/environments/{{.path.basename}}-values.yaml
             parameters:
-            - name: "image.tag"
+            - name: "deployment.image.tag"
               value: '{{ .tagname }}'
       destination:
         server: https://kubernetes.default.svc

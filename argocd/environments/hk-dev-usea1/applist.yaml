@@ -7,3 +7,4 @@ key:
       tagname: v1
     - name: admin
       targetversion: release-9.1
+      tagname: v2

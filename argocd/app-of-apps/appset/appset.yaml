@@ -32,9 +32,9 @@ spec:
           path: helm-charts/my-apps
           helm:
             valueFiles:
-            - ../../appconfig/environments/{{.path.basename}}-values.yaml
             - ../../k8sconfig/apps/{{ .name }}/{{.path.basename}}-version.yaml
             - ../../appconfig/global-values.yaml
+            - ../../appconfig/environments/{{.path.basename}}-values.yaml
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'

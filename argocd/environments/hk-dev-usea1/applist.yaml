@@ -1,5 +1,5 @@
 defaults: &defaultValues
-  targetversion: release-9.1
+  targetversion: release-8.1
 key:
   components:
     - name: core

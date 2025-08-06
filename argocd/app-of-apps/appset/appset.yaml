@@ -10,7 +10,7 @@ spec:
   - matrix:
       generators:
       - git:
-          repoURL: https://github.com/theadityab/argo-root.git
+          repoURL: git@github.com:theadityab/argo-root.git
           revision: main
           files:
           - path: argocd/environments/*/applist.yaml

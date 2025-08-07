@@ -27,7 +27,7 @@ spec:
         syncOptions:
         - CreateNamespace=true        
       sources:
-        - repoURL: https://github.com/theadityab/argo-testing.git
+        - repoURL: git@github.com:theadityab/argo-testing.git
           targetRevision: '{{ .targetversion }}'
           path: helm-charts/my-apps
           helm:

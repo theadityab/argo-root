@@ -5,6 +5,6 @@ key:
     - name: core
       <<: *defaultValues
       tagname: v4
-    # - name: admin
-    #   targetversion: release-9.1
-    #   tagname: v2
+    - name: admin
+      <<: *defaultValues
+      tagname: v2

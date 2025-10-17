@@ -5,6 +5,6 @@ key:
     - name: core
       <<: *defaultValues
       tagname: v4
-    - name: admin
-      <<: *defaultValues
+    - name: admin 
+      <<: *defaultValues '
       tagname: v2

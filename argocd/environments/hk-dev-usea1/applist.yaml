@@ -6,5 +6,5 @@ key:
       <<: *defaultValues
       tagname: v4
     - name: admin 
-      <<: *defaultValues '
+      <<: *defaultValues 
       tagname: v2

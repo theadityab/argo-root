@@ -1,5 +1,10 @@
 defaults: &defaultValues
   targetversion: release-9.1
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true  
 key:
   components:
     - name: core

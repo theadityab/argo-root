@@ -22,7 +22,7 @@ spec:
       name: '{{ .name }}-{{.path.basename}}'
     spec:
       project: default
-      syncPolicy: '{{ .syncPolicy | toJson }}'        
+      syncPolicy: '{{ .syncPolicy }}'      
       sources:
         - repoURL: git@github.com:theadityab/argo-testing.git
           targetRevision: '{{ .targetversion }}'

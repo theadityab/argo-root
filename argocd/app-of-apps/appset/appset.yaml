@@ -24,7 +24,8 @@ spec:
       project: default
       {{- if .enableManualSync }}
       syncPolicy:
-        automated: null
+        syncOptions:
+        - CreateNamespace=true
       {{- else }}
       syncPolicy:
         automated: 

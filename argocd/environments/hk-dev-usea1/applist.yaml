@@ -1,5 +1,6 @@
 defaults: &defaultValues
   targetversion: release-9.1
+  disableAutoSync: false
 key:
   components:
     - name: core

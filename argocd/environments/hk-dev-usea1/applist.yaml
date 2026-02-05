@@ -5,7 +5,7 @@ key:
     - name: core
       <<: *defaultValues
       tagname: v4
-      enableManualSync: true
+      disableAutoSync: true
     - name: admin 
       <<: *defaultValues 
       tagname: v2

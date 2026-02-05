@@ -23,6 +23,8 @@ spec:
     spec:
       project: default
       syncPolicy:
+        automated:
+          selfHeal: true
         syncOptions:
         - CreateNamespace=true
       sources:
@@ -43,7 +45,6 @@ spec:
   templatePatch: |
     spec:
       syncPolicy:
-      {{- if not .disableAutoSync }}
-        automated:
-          selfHeal: true
+      {{- if .disableAutoSync }}
+        automated: null
       {{- end }}

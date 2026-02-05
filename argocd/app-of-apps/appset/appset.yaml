@@ -22,11 +22,16 @@ spec:
       name: '{{ .name }}-{{.path.basename}}'
     spec:
       project: default
-      syncPolicy: '{{ .syncpolicy }}'
-        # automated: 
-        #   selfHeal: true
-        # syncOptions:
-        # - CreateNamespace=true
+      {{- if .enableManualSync }}
+      syncPolicy:
+        automated: null
+      {{- else }}
+      syncPolicy:
+        automated: 
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+      {{- end }}
       sources:
         - repoURL: git@github.com:theadityab/argo-testing.git
           targetRevision: '{{ .targetversion }}'

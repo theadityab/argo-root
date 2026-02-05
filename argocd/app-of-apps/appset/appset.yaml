@@ -22,17 +22,9 @@ spec:
       name: '{{ .name }}-{{.path.basename}}'
     spec:
       project: default
-      {{- if .enableManualSync }}
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-      {{- else }}
-      syncPolicy:
-        automated: 
-          selfHeal: true
-        syncOptions:
-        - CreateNamespace=true
-      {{- end }}
       sources:
         - repoURL: git@github.com:theadityab/argo-testing.git
           targetRevision: '{{ .targetversion }}'
@@ -48,3 +40,10 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
+  templatePatch: |
+    spec:
+      syncPolicy:
+      {{- if not .disableAutoSync }}
+        automated:
+          selfHeal: true
+      {{- end }}

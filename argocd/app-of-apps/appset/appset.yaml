@@ -46,5 +46,6 @@ spec:
     spec:
       syncPolicy:
       {{- if .disableAutoSync }}
-        automated: null
+        syncOptions:
+        - CreateNamespace=true
       {{- end }}

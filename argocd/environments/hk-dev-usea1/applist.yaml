@@ -5,6 +5,18 @@ key:
     - name: core
       <<: *defaultValues
       tagname: v4
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
     - name: admin 
       <<: *defaultValues 
       tagname: v2
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
+      
+      

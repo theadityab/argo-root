@@ -23,7 +23,8 @@ spec:
     spec:
       project: default
       syncPolicy:
-        automated: null
+        automated:
+          selfHeal: true
         syncOptions:
         - CreateNamespace=true        
       sources:
